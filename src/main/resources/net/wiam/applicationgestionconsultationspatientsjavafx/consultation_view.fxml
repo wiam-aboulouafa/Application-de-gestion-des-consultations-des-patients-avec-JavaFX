@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" alignment="TOP_CENTER"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="net.wiam.applicationgestionconsultationspatientsjavafx.ConsultationController">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Gestion des Consultations" style="-fx-font-size: 20px;" />
+
+    <HBox spacing="10">
+        <ComboBox fx:id="patientCombo" promptText="Sélectionner un patient" />
+        <DatePicker fx:id="datePicker" />
+        <TextField fx:id="diagnosticField" promptText="Diagnostic" />
+        <Button text="Ajouter" onAction="#ajouterConsultation" />
+    </HBox>
+
+    <TableView fx:id="consultationTable" prefHeight="200" prefWidth="580">
+        <columns>
+            <TableColumn fx:id="idCol" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="patientCol" text="Patient" prefWidth="150"/>
+            <TableColumn fx:id="dateCol" text="Date" prefWidth="150"/>
+            <TableColumn fx:id="diagnosticCol" text="Diagnostic" prefWidth="230"/>
+        </columns>
+    </TableView>
+
+    <Button text="Supprimer" onAction="#supprimerConsultation" />
+</VBox>
